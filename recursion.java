@@ -1,5 +1,7 @@
 public class recursion {
   public static void main(String[] args) {
+
+    // testing for sqrt
     System.out.println(sqrt(100));
     System.out.println("Should be around 10 \n");
     System.out.println(sqrt(16));
@@ -18,6 +20,15 @@ public class recursion {
     System.out.println("Should be around 7 \n");
     System.out.println(sqrt(256));
     System.out.println("Should be around 16 \n");
+
+    System.out.println(fib(0));
+    System.out.println("Should be 1 \n");
+    System.out.println(fib(1));
+    System.out.println("Should be 1 \n");
+    System.out.println(fib(5));
+    System.out.println("Should be 5 \n");
+    System.out.println(fib(10));
+    System.out.println("Should be 55 \n");
   }
 
   public static double sqrt(double n){
@@ -35,4 +46,22 @@ public class recursion {
     }
 
   }
+
+  /*Recursively find the n'th fibbonaci number in linear time
+     *fib(0) = 1; fib(1) = 1; fib(5) = 5
+     *precondition: n is non-negative
+     */
+    public static int fib(int n){
+      return fibH(n, 0, 0, 1);
+
+    }
+
+    public static int fibH(int n, int current, int prev, int prev2){
+      if( n == current) {
+        return prev + prev2;
+      } else {
+        return fibH(n , current + 1, current, prev);
+      }
+
+    }
 }
