@@ -52,7 +52,7 @@ public class recursion {
 
   public static double sqrtH(double n, double guess) {
     double gtemp = guess * guess;
-    double tol = n * .00001;
+    double tol = guess * .00001;
     if ( gtemp <= n + tol && gtemp >= n - tol) {
       return guess;
     } else {
