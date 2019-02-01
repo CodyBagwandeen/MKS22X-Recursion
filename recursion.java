@@ -1,4 +1,4 @@
-import  java.util.ArrayList;
+import java.util.ArrayList;
 public class recursion {
   public static void main(String[] args) {
 
@@ -22,6 +22,7 @@ public class recursion {
     System.out.println(sqrt(256));
     System.out.println("Should be around 16 \n");
 
+    // testing for fib
     System.out.println(fib(0));
     System.out.println("Should be 1 \n");
     System.out.println(fib(1));
@@ -32,6 +33,11 @@ public class recursion {
     System.out.println("Should be 55 \n");
     System.out.println(fib(14));
     System.out.println("Should be 377 \n");
+
+    // testing for makeAllSums
+
+    System.out.println(makeAllSums(3));
+    //System.out.println("Should be 1 \n");
 
   }
 
