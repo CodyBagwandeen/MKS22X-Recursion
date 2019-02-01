@@ -37,7 +37,12 @@ public class recursion {
     // testing for makeAllSums
 
     System.out.println(makeAllSums(3));
-    //System.out.println("Should be 1 \n");
+    System.out.println("Should be [0, 1, 2, 3, 3, 4, 5, 6] \n");
+    System.out.println(makeAllSums(1));
+    System.out.println("Should be [0, 1] \n");
+    System.out.println(makeAllSums(2));
+    System.out.println("Should be [0, 1, 2, 3] \n");
+
 
   }
 
