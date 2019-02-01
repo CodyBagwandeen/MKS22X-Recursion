@@ -52,15 +52,20 @@ public class recursion {
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return fibH(n, 0, 0, 1);
+      return fibH(n, 0, 0, 1, 0);
 
     }
 
-    public static int fibH(int n, int current, int prev, int prev2){
+    public static int fibH(int n, int current, int ans, int prev, int prev2){
       if( n == current) {
-        return prev + prev2;
+        return ans;
       } else {
-        return fibH(n , current + 1, current, prev);
+        // System.out.println(n);
+        // System.out.println(current);
+        // System.out.println(ans);
+        // System.out.println(prev);
+        // System.out.println(prev2 + "\n");
+        return fibH(n , current + 1, ans + prev, ans, prev);
       }
 
     }
