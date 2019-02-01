@@ -29,6 +29,9 @@ public class recursion {
     System.out.println("Should be 5 \n");
     System.out.println(fib(10));
     System.out.println("Should be 55 \n");
+    System.out.println(fib(14));
+    System.out.println("Should be 377 \n");
+    
   }
 
   public static double sqrt(double n){
