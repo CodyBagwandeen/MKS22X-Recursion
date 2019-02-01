@@ -1,3 +1,4 @@
+import  java.util.ArrayList;
 public class recursion {
   public static void main(String[] args) {
 
@@ -31,7 +32,7 @@ public class recursion {
     System.out.println("Should be 55 \n");
     System.out.println(fib(14));
     System.out.println("Should be 377 \n");
-    
+
   }
 
   public static double sqrt(double n){
@@ -69,6 +70,22 @@ public class recursion {
         // System.out.println(prev);
         // System.out.println(prev2 + "\n");
         return fibH(n , current + 1, ans + prev, ans, prev);
+      }
+
+    }
+
+    public static ArrayList<Integer> makeAllSums(int n) {
+      ArrayList<Integer> List = new ArrayList<Integer>();
+      sumsH(n, 0, List);
+      return List;
+    }
+
+    public static void sumsH(int n, int sum, ArrayList<Integer> list){
+      if( n == 0) {
+        list.add(sum);
+      } else {
+        sumsH( n-1, sum, list);
+        sumsH( n-1, sum + n, list);
       }
 
     }
