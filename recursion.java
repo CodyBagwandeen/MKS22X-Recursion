@@ -2,62 +2,80 @@ import java.util.ArrayList;
 public class recursion {
   public static void main(String[] args) {
 
-    // testing for sqrt
-    System.out.println(sqrt(100));
-    System.out.println("Should be around 10 \n");
-    System.out.println(sqrt(16));
-    System.out.println("Should be around 4 \n");
-    System.out.println(sqrt(225));
-    System.out.println("Should be around 15 \n");
-    System.out.println(sqrt(10000));
-    System.out.println("Should be around 100 \n");
-    System.out.println(sqrt(2));
-    System.out.println("Should be around 1.4 \n");
-    System.out.println(sqrt(1));
-    System.out.println("Should be around 1 \n");
-    System.out.println(sqrt(36));
-    System.out.println("Should be around 6 \n");
-    System.out.println(sqrt(49));
-    System.out.println("Should be around 7 \n");
-    System.out.println(sqrt(256));
-    System.out.println("Should be around 16 \n");
+    System.out.println("sqrt()");
+         System.out.println("-----------------------\n");
 
-    // testing for fib
-    System.out.println(fib(0));
-    System.out.println("Should be 1 \n");
-    System.out.println(fib(1));
-    System.out.println("Should be 1 \n");
-    System.out.println(fib(5));
-    System.out.println("Should be 5 \n");
-    System.out.println(fib(10));
-    System.out.println("Should be 55 \n");
-    System.out.println(fib(14));
-    System.out.println("Should be 377 \n");
+         System.out.println("sqrt(4, 0.00001)");
+         System.out.println("EXPECTED: 2");
+         System.out.println(sqrt(4, 0.00001));         // 2
 
-    // testing for makeAllSums
+         System.out.println("----");
 
-    System.out.println(makeAllSums(3));
-    System.out.println("Should be [0, 1, 2, 3, 3, 4, 5, 6] \n");
-    System.out.println(makeAllSums(1));
-    System.out.println("Should be [0, 1] \n");
-    System.out.println(makeAllSums(2));
-    System.out.println("Should be [0, 1, 2, 3] \n");
+         System.out.println("sqrt(8, 0.00001)");
+         System.out.println("EXPECTED: ~2.8284");
+         System.out.println(sqrt(8, 0.00001));         // ~2.8284
+
+         System.out.println("----");
+
+         System.out.println("sqrt(0, 0.00001)");
+         System.out.println("EXPECTED: 0");
+         System.out.println(sqrt(0, 0.00001));         // 0
+
+         System.out.println("\n");
+
+         System.out.println("fib()");
+         System.out.println("-----------------------\n");
+
+         System.out.println("fib(0)");
+         System.out.println("EXPECTED: 0");
+         System.out.println(fib(0));                   // 0
+
+         System.out.println("----");
+
+         System.out.println("fib(1)");
+         System.out.println("EXPECTED: 1");
+         System.out.println(fib(1));                   // 1
+
+         System.out.println("----");
+
+         System.out.println("fib(7)");
+         System.out.println("EXPECTED: 13");
+         System.out.println(fib(7));                   // 13
+
+         System.out.println("makeAllSums()");
+         System.out.println("-----------------------\n");
+
+         System.out.println("makeAllSums(0)");
+         System.out.println("EXPECTED: [0]");
+         System.out.println(makeAllSums(0));           // [0]
+
+         System.out.println("----");
+
+         System.out.println("makeAllSums(1)");
+         System.out.println("EXPECTED: [1, 0]");
+         System.out.println(makeAllSums(1));           // [1, 0]
+
+         System.out.println("----");
+
+         System.out.println("makeAllSums(3)");
+         System.out.println("EXPECTED: [0, 3, 2, 5, 1, 4, 3, 6]");
+         System.out.println(makeAllSums(3));           // [0, 3, 2, 5, 1, 4, 3, 6]
 
 
   }
 
-  public static double sqrt(double n){
-    return sqrtH(n, 1);
+  public static double sqrt(double n, double tolerance){
+    return sqrtH(n, 1,tolerance);
   }
 
-  public static double sqrtH(double n, double guess) {
+  public static double sqrtH(double n, double guess, double tolerance) {
     double gtemp = guess * guess;
-    double tol = guess * .00001;
+    double tol = guess * tolerance;
     if ( gtemp <= n + tol && gtemp >= n - tol) {
       return guess;
     } else {
       gtemp = ( n / guess + guess) / 2;
-      return sqrtH(n, gtemp);
+      return sqrtH(n, gtemp, tolerance);
     }
 
   }
